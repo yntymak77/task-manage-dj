@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}Account - {{ user.username }}{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Account</strong>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Email: {{ user.email }}</p>
+                <br>
+                <div class="row">
+                    <a href="/accounts/profile/edit"><button style="margin-left:10px; margin-right:10px;" type="button" class="btn btn-primary">Change Email</button></a>
+                    <a href="/accounts/profile/password"><button style="margin-left:10px; margin-right:10px;" type="button" class="btn btn-primary">Change Password</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

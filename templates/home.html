@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Welcome{% endblock %}
+{% block menu-active-daily-task %}active{% endblock %}
+{% block menu-active-daily-dashboard %}{% endblock %}
+
+{% block content %}
+<div class="row">
+  {% if daily_task_done %}
+  <h2 class="text-center">Check back tomorrow for the next task.</h2>
+  {% else %}
+  <div class="col">
+    <section class="card">
+      <h1 class="text-center select-category-title">Select a category you would like to improve</h1>
+      <div class="card-body text-secondary">
+          <div class="button-group-category">
+              <a href="{% url 'traffic' %}">
+                  <button class="btn btn-primary fixed-button-width-category " type="button">Traffic</button>
+              </a>
+              <a href="{% url 'conversionrate' %}">
+                  <button class="btn btn-primary fixed-button-width-category " type="button">Conversion Rate</button>
+              </a>
+              <a href="{% url 'marketing' %}">
+                  <button class="btn btn-primary fixed-button-width-category " type="button">Bounce Rate</button>
+              </a>
+          </div>
+      </div>
+    </section>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

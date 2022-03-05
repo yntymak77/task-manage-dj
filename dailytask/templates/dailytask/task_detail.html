@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ task.title }}{% endblock %}
+{% block menu-active-daily-task %}active{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col">
+    <section class="card">
+        <h3 class="text-center task-title">{{ task.title }}</h3>
+      <div class="card-body text-secondary">
+          <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="{{ task.video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="task-description text-center">
+              <p>{{ task.description }}</p>
+          </div>
+          <div class="start-task-button text-center">
+              {% for step in task.step_set.all|slice:":1" %}
+                <a href="{% url 'step' step.task.id step.step_number %}">
+                    <button class="btn btn-primary fixed-button-width-category" type="button">Start Task</button>
+                </a>
+              {% endfor %}
+          </div>
+      </div>
+    </section>
+  </div>
+</div>
+{% endblock content %}

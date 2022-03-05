@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}Step {{ step.title }}{% endblock %}
+{% block menu-active-daily-task %}active{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col">
+    <section class="card">
+        {% if step %}
+            <h3 class="text-center task-title">{{ step.title }}</h3>
+            <div class="card-body text-secondary">
+              <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="{{ step.video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="task-description text-center">
+                  <p>{{ step.content|linebreaks }}</p>
+              </div>
+              <div class="start-task-button text-center">
+                  {% if previous_step_pk %}
+                  <a href="{% url 'step' task_pk=step.task.pk step_pk=previous_step_pk %}">
+                      <button class="btn btn-primary fixed-button-width-category" type="button">Previous Step</button>
+                  </a>
+                  {% endif %}
+                  {% if next_step_pk %}
+                  <a href="{% url 'step' task_pk=step.task.pk step_pk=next_step_pk %}">
+                      <button class="btn btn-primary fixed-button-width-category" type="button">Next Step</button>
+                  </a>
+                  {% else %}
+                  <a href="{% url 'finish_task' pk=step.task.pk %}">
+                      <button class="btn btn-primary fixed-button-width-category" type="button">Finish Task</button>
+                  </a>
+                  {% endif %}
+              </div>
+            </div>
+        {% else %}
+        <p>There is no task.</p>
+        {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock content %}

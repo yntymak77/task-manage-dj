@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Good job! Task done{% endblock %}
+{% block menu-active-daily-task %}active{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col">
+    <section class="card">
+      <h1 class="text-center select-category-title">{{ task.title }}</h1>
+      <div class="card-body text-done-message text-secondary text-center">
+             <p>{{ task.done_message }}</p>
+      </div>
+      <h3 class="text-center text-task-complete">Daily task complete, good job!</h3>
+      <p class="text-center text-new-task-tomorrow">New task will be available tomorrow.</p>
+      <div class="redo-task-button text-center">
+          <a href="{% url 'detail' task.id %}">
+              <button class="btn btn-primary fixed-button-width-category" type="button">Redo Task</button>
+          </a>
+      </div>
+    </section>
+  </div>
+</div>
+{% endblock %}

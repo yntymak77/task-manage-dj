@@ -1,0 +1,91 @@
+.logo.logo-menu > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo.logo-menu > a > img {
+    max-width: 64px;
+}
+
+.logo.logo-menu > a > span {
+    font-size: 30px;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.button-group-category {
+    text-align: center;
+    margin: 0px 0px 100px 0px;
+}
+
+.fixed-button-width-category {
+    min-width: 157px;
+    margin: 5px 5px;
+}
+
+.select-category-title {
+    margin: 100px 0px 50px 0px;
+}
+
+.task-title {
+    margin: 30px 0px 30px 0px;
+}
+
+.embed-responsive {
+    max-width: 1080px;
+    margin: 0px auto;
+}
+
+.task-description {
+    margin: 30px;
+}
+
+.start-task-button {
+    margin: 0px 30px 30px 30px;
+}
+
+.text-task-complete {
+    margin: 30px;
+}
+
+.text-new-task-tomorrow {
+    margin: 0px 30px 30px 30px;
+}
+
+.text-done-message {
+    margin: 0px 30px 0px 30px;
+}
+
+.redo-task-button {
+    margin: 0px 30px 100px 30px;
+}
+
+body > div > div > div > div > div > div > div > div > div > form > p:nth-child(3) > label {
+}
+
+#id_password {
+    display: none !important;
+}
+
+body > div > div > div > div > div > div > div > div > div > form > span {
+    display: none !important;
+}
+
+#id_email {
+    min-width: 250px;
+}
+
+.space-settings-first {
+    margin: 10px 0px 5px 0px !important;
+}
+
+.space-settings {
+    margin: 5px 0px 5px 0px !important;
+}
+
+
+btn btn-primary {
+   margin-left: 10px !important;
+   margin-right: 10px !important;
+}
